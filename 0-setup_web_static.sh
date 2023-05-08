@@ -13,7 +13,7 @@ then
 	sudo mkdir -p /data/web_static/{releases/$special,shared}
 fi
 
-sudo chown -R ubuntu:ubuntu /data
+sudo chown -R ubuntu:ubuntu /data/
 
 text="<html>
   <head>
