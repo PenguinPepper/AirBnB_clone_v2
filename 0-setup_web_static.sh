@@ -10,7 +10,7 @@ fi
 special="test"
 if [ ! -d /data/ ];
 then
-	mkdir -p /data/web_static/{releases/$special,shared}
+	sudo mkdir -p /data/web_static/{releases/$special,shared}
 fi
 
 sudo chown -R ubuntu:ubuntu /data
@@ -35,3 +35,4 @@ fi
 replace="server_name _;"
 text2="	server_name _;\n	location\/hbnb_static\/ {\n	alias \/data\/web_static\/current\/;\n	}"
 sudo sed -i "s/$replace/$text2/" /etc/nginx/sites-available/default
+sudo service nginx restart
