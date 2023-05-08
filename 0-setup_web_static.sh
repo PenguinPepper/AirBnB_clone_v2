@@ -14,12 +14,6 @@ then
 	sudo chown -R ubuntu:ubuntu /data
 fi
 
-<<<<<<< HEAD
-=======
-sudo chown -R ubuntu:ubuntu /data
-sudo chmod -R 755 /data
-
->>>>>>> e54edf96df995488a68df5bd0fffee7b9fd99147
 text="<html>
   <head>
   </head>
