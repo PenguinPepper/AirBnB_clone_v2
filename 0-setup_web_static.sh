@@ -22,7 +22,7 @@ text="<html>
     Holberton School
   </body>
 </html>"
-echo $text >> /data/web_static/releases/$special/index.html
+echo "$text" >> /data/web_static/releases/$special/index.html
 
 if [ -L /data/web_static/current ];
 then
