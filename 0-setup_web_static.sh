@@ -24,13 +24,7 @@ text="<html>
 </html>"
 echo "$text" >> /data/web_static/releases/$special/index.html
 
-if [ -L /data/web_static/current ];
-then
-	rm /data/web_static/current
-	ln -s /data/web_static/releases/$special /data/web_static/current
-else
-	ln -s /data/web_static/releases/$special /data/web_static/current
-fi
+sudo ln -sf /data/web_static/releases/$special /data/web_static/current
 
 replace="server_name localhost;"
 text2="server_name localhost;\n	location \/hbnb_static\/ {\n		alias \/data\/web_static\/current\/;\n	}"
