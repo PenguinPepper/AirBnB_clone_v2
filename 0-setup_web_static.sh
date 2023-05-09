@@ -13,8 +13,6 @@ then
 	sudo mkdir -p /data/web_static/{releases/$special,shared}
 fi
 
-sudo chown -R ubuntu:ubuntu /data
-
 text="<html>
   <head>
   </head>
@@ -25,6 +23,8 @@ text="<html>
 echo "$text" >> /data/web_static/releases/$special/index.html
 
 sudo ln -sf /data/web_static/releases/$special /data/web_static/current
+
+sudo chown -R ubuntu:ubuntu /data/
 
 replace="server_name localhost;"
 text2="server_name localhost;\n	location \/hbnb_static\/ {\n		alias \/data\/web_static\/current\/;\n	}"
