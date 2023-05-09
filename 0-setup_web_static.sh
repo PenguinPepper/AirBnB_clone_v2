@@ -13,6 +13,7 @@ then
 	sudo mkdir -p /data/web_static/{releases/$special,shared}
 fi
 
+sudo touch /data/web_static/releases/$special/index.html
 text="<html>
   <head>
   </head>
@@ -20,7 +21,7 @@ text="<html>
     Holberton School
   </body>
 </html>"
-echo "$text" >> /data/web_static/releases/$special/index.html
+echo "$text" | sudo tee /data/web_static/releases/$special/index.html
 
 sudo ln -sf /data/web_static/releases/$special /data/web_static/current
 
