@@ -28,6 +28,6 @@ sudo ln -sf /data/web_static/releases/$special /data/web_static/current
 sudo chown -R ubuntu:ubuntu /data/
 
 replace="server_name localhost;"
-text2="server_name localhost;\n	location \/hbnb_static\/ {\n		alias \/data\/web_static\/current\/;\n	}"
+text2="server_name localhost;\n	location \/hbnb_static {\n		alias \/data\/web_static\/current\/;\n	}"
 sudo sed -i "s/$replace/$text2/" /etc/nginx/sites-available/default
 sudo service nginx restart
