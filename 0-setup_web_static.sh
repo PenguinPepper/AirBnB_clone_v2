@@ -12,8 +12,9 @@ if [ ! -d /data/ ];
 then
 	sudo mkdir -p /data
 	sudo mkdir -p /data/web_static/{releases/$special,shared}
-	sudo chown -R ubuntu:ubuntu /data
 fi
+
+sudo chown -R ubuntu:ubuntu /data
 
 text="<html>
   <head>
