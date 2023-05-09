@@ -10,14 +10,10 @@ fi
 special="test"
 if [ ! -d /data/ ];
 then
-	sudo mkdir -p /data
-	sudo mkdir -p /data/web_static/
-	sudo mkdir -p /data/web_static/releases/
-	sudo mkdir -p /data/web_static/releases/$special/
-	sudo mkdir -p /data/web_static/shared/
+	sudo mkdir -p /data/web_static/{releases/$special,shared}
 fi
 
-sudo chown -R --from=root:root ubuntu:ubuntu /data
+sudo chown -R ubuntu:ubuntu /data
 
 text="<html>
   <head>
@@ -36,7 +32,7 @@ else
 	ln -s /data/web_static/releases/$special /data/web_static/current
 fi
 
-replace="server_name _;"
-text2="	server_name _;\n	location\/hbnb_static\/ {\n	alias \/data\/web_static\/current\/;\n	}"
+replace="server_name localhost;"
+text2="server_name localhost;\n	location \/hbnb_static\/ {\n		alias \/data\/web_static\/current\/;\n	}"
 sudo sed -i "s/$replace/$text2/" /etc/nginx/sites-available/default
 sudo service nginx restart
