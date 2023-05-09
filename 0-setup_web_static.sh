@@ -10,7 +10,11 @@ fi
 special="test"
 if [ ! -d /data/ ];
 then
-	sudo mkdir -p /data/web_static/releases/{$special,shared}
+	sudo mkdir -p /data
+	sudo mkdir -p /data/web_static/
+	sudo mkdir -p /data/web_static/releases/
+	sudo mkdir -p /data/web_static/releases/$special/
+	sudo mkdir -p /data/web_static/shared/
 fi
 
 sudo chown -R --from=root:root ubuntu:ubuntu /data
