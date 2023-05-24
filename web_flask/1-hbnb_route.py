@@ -9,10 +9,12 @@ from flask import Flask
 app = Flask(__name__)
 app.url_map.strict_slashes = False
 
+
 @app.route('/')
 def index():
     ''''Returns text for home route'''
     return 'Hello HBNB!'
+
 
 @app.route('/hbnb')
 def hbnb():
