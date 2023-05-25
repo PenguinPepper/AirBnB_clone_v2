@@ -25,7 +25,7 @@ def hbnb():
 @app.route('/c/<text>')
 def c(text):
     '''Return a special message for C'''
-    return 'C '.format(escape(text.replace("_", " ")))
+    return 'C {}'.format(escape(text.replace("_", " ")))
 
 
 if __name__ == "__main__":
