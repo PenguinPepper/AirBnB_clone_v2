@@ -28,7 +28,8 @@ def c(text):
     return 'C {}'.format(escape(text.replace("_", " ")))
 
 
-@app.route('/python/(<text>)')
+@app.route('/python')
+@app.route('/python/<text>)
 def python(text='is cool'):
     '''Return a special message for Python'''
     return 'Python {}'.format(escape(text.replace("_", " ")))
