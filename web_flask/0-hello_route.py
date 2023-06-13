@@ -9,7 +9,7 @@ from flask import Flask
 app = Flask(__name__)
 
 
-@app.route('/')
+@app.route('/airbnb-onepage/')
 def index():
     '''Function that returns text for home route'''
     return 'Hello HBNB!'
